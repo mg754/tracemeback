@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<title>Profile - <%=@user.username%></title>
+	<style>
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color:  #FF69B4 ;
+			position: fixed;
+			top: 10px;
+			float: left;
+			border: 2px solid #fefefe; //white
+		}
+
+		p {
+			font-family:sans-serif;
+			color: white;
+			font-weight: bold;
+		}
+
+		li {
+			float: left;
+		}
+
+		li a {
+      		text-shadow: 2px 2px black;
+			font-size: large;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		li a:hover:not(.activePage) {
+			background-color: #cc5490 ;
+		}
+
+		.activePage {
+			background-color: #cc5490 ;
+		}
+
+		th a {
+      		text-shadow: 2px 2px black;
+			display: block;
+			color: white;
+			text-decoration: none;
+			font-size: x-large;
+			text-align: center;
+		}
+
+		th:hover {
+			background-color:  #cc5490 ;
+		}
+
+		.paddingForNavigation{
+			padding-left: 50px;
+			padding-top: 20px;
+		}
+
+		.background {
+			background: url("/weeb2.jpg") no-repeat center fixed;
+			background-size: cover;
+		}
+
+		.currentUser {
+			float:right;
+      		text-shadow: 2px 2px black;
+			border: 2px solid white;
+			background-color:  #FF69B4 ;
+			width: 750px;
+			text-align: center;
+		
+		 }
+
+		table {
+			border-spacing: 20px;
+		}
+		.stageTablePadding {
+			position: absolute;
+			top: 250px;
+			left: 200px;
+		}
+		.tableEntryPadding {
+			width: 200px;
+			height: 200px;
+			border: 2px solid white;
+			background-color:  #FF69B4 ;
+		}
+
+		.wrap {
+		    width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+	     }
+
+	</style>
+</head>
+</head>
+<body class="background">
+   <div class ="wrap">
+	<div class = "paddingForNavigation">
+		<ul>
+		<li><a class = "activePage">Campaign</a></li>
+		<li><a>Coop</a></li>
+		<li><a href="/logout">Log Out</a></li>
+		</ul>
+	</div>
+	<div class="currentUser">
+		<p><%= @user.username %></p>
+	</div>
+	<br>
+	<div>
+		<table class ="stageTablePadding">
+			<tr>
+				<th class = "tableEntryPadding" onClick = "document.location.href = '/game?stage=0';"><a>Tutorial</a></th>
+				<th class = "tableEntryPadding" onClick = "document.location.href = '/game?stage=1';"><a>Stage 1</a></th>
+				<th class = "tableEntryPadding" onClick = "document.location.href = '/game?stage=2';"><a>Stage 2</a></th>
+			</tr>
+		</table>
+	</div>
+   </div>
+</body>
+</html>
+

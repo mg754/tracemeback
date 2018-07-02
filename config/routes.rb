@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :widgets
+
+  get '/login' => 'login#index'
+  post '/login' => 'login#create'
+
+  get '/register' => 'register#index'
+  post '/register' => 'register#create'
+
+  get '/logout' => 'logout#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
