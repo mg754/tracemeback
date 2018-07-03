@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/register' => 'register#index'
   post '/register' => 'register#create'
 
+  get '/profile' => 'profile#index'
+
   get '/logout' => 'logout#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
